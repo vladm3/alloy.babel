@@ -1,11 +1,12 @@
 {
   "name": "alloy.babel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Enables ES6, Pug (Jade), STSS for Alloy projects",
   "author": "Vlad Misyura",
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.24.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.5.1",
     "chokidar": "^1.7.0",

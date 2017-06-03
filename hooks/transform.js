@@ -139,7 +139,11 @@ class TransformPlugin extends BasePlugin {
     this.log(`Transforming JS with Babel ${filePath} -> ${filePath}`);
     return new Promise((resolve, reject) => {
       const presets = [require.resolve('babel-preset-env')];
-      const plugins = [require.resolve('babel-plugin-transform-object-rest-spread')];
+      const plugins = [
+        require.resolve('babel-plugin-add-module-exports'),
+        require.resolve('babel-plugin-transform-object-rest-spread')
+      ];
+
       babel.transformFile(filePath, { presets, plugins, retainLines: true }, (err, result) => {
         if (err) {
           reject(err);
