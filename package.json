@@ -1,0 +1,51 @@
+{
+  "name": "alloy.babel",
+  "version": "0.0.1",
+  "description": "Enables ES6, Pug (Jade), STSS for Alloy projects",
+  "author": "Vlad Misyura",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.5.1",
+    "chokidar": "^1.7.0",
+    "fs-extra": "^3.0.1",
+    "klaw-sync": "^2.1.0",
+    "lodash": "^4.17.4",
+    "object-assign": "^4.1.1",
+    "pug": "^2.0.0-rc.2",
+    "replace-ext": "^1.0.0",
+    "stss": "^0.4.3"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "ecmaVersion": 6
+    },
+    "env": {
+      "es6": true,
+      "node": true
+    },
+    "rules": {
+      "indent": [
+        2,
+        2
+      ],
+      "quotes": [
+        2,
+        "single"
+      ],
+      "linebreak-style": [
+        2,
+        "unix"
+      ],
+      "semi": [
+        2,
+        "always"
+      ]
+    }
+  }
+}
