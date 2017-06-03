@@ -142,7 +142,10 @@ class TransformPlugin extends BasePlugin {
       const plugins = [
         require.resolve('babel-plugin-add-module-exports'),
         require.resolve('babel-plugin-transform-object-rest-spread'),
-        [require.resolve('babel-plugin-transform-builtin-extend'), { globals: ['Error', 'Array'] }]
+        [require.resolve('babel-plugin-transform-builtin-extend'), {
+          globals: ['Error', 'Array'],
+          approximate: true
+        }]
       ];
 
       babel.transformFile(filePath, { presets, plugins, retainLines: true }, (err, result) => {
