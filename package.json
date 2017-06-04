@@ -1,8 +1,27 @@
 {
   "name": "alloy.babel",
-  "version": "0.0.2",
-  "description": "Enables ES6, Pug (Jade), STSS for Alloy projects",
-  "author": "Vlad Misyura",
+  "version": "0.1.0",
+  "keywords": [
+    "appcelerator",
+    "titanium",
+    "titanium-alloy",
+    "alloy",
+    "babel",
+    "stss"
+  ],
+  "description": "Appcelerator Titanium plugin which enables ES6, Pug (Jade), STSS and LiveView support for Alloy projects",
+  "author": {
+    "name": "Vlad Misyura",
+    "email": "vlad.misyura@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vladm3/alloy.babel.git"
+  },
+  "scripts": {
+    "postinstall": "node ./scripts/install.js",
+    "postupdate": "node ./scripts/install.js"
+  },
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.24.1",
@@ -47,6 +66,9 @@
       "semi": [
         2,
         "always"
+      ],
+      "no-console": [
+        0
       ]
     }
   }
