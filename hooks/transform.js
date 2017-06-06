@@ -19,13 +19,17 @@ class TransformPlugin extends BasePlugin {
 
   addHooks() {
     process.on('SIGINT', () => {
-      this.log('Process interrupted. Stopping watching.');
-      this.watcher && this.watcher.close();
+      if (this.watcher) {
+        this.log('Process interrupted. Stopping watching.');
+        this.watcher.close();
+      }
     });
 
     process.on('exit', () => {
-      this.log('Process finished. Stopping watching.');
-      this.watcher && this.watcher.close();
+      if (this.watcher) {
+        this.log('Process finished. Stopping watching.');
+        this.watcher.close();
+      }
     });
 
     this.cli.on('build.pre.construct', this.handlePreConstruct);
@@ -138,17 +142,7 @@ class TransformPlugin extends BasePlugin {
   transformJs(filePath) {
     this.log(`Transforming JS with Babel ${filePath} -> ${filePath}`);
     return new Promise((resolve, reject) => {
-      const presets = [require.resolve('babel-preset-env')];
-      const plugins = [
-        require.resolve('babel-plugin-add-module-exports'),
-        require.resolve('babel-plugin-transform-object-rest-spread'),
-        [require.resolve('babel-plugin-transform-builtin-extend'), {
-          globals: ['Error', 'Array'],
-          approximate: true
-        }]
-      ];
-
-      babel.transformFile(filePath, { presets, plugins, retainLines: true }, (err, result) => {
+      babel.transformFile(filePath, (err, result) => {
         if (err) {
           reject(err);
         } else {
