@@ -1,4 +1,4 @@
-# alloy.babel
+# alloy.babel - NOT MAINTAINED. USE [ti.transform](https://github.com/vladm3/ti.transform) STACK INSTEAD
 Appcelerator Titanium plugin which enables ES6, Pug (Jade), STSS support for Alloy projects
 
 ## Configuration
